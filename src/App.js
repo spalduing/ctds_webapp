@@ -1,19 +1,26 @@
 import './App.css';
-import { useEffect } from 'react';
-import axios from 'axios';
-
-
+import { ToastContainer } from 'react-toastify';
+import BestSellerProduct from './components/bestseller_product/BestSellerProduct';
+import Bills from './components/bills/Bills';
+import CreateBill from './components/create_bill/CreateBill';
+import CustomersForm from './components/customers_consumptions/CustomersForm';
+import WaiterSells from './components/waiters_sells/WaiterSells';
 function App() {
-
-  useEffect(() => {
-    axios.get('/detail_bills/bestseller')
-    .then(response => { console.log(response.data);
-    })
-  }, []);
-
   return (
     <>
-    <h1>My reactApp</h1>
+      <body>
+        <header>
+          <h1>Comidas Típicas del Sur</h1>
+        </header>
+        <main>
+          <CreateBill />
+          <Bills />
+          <BestSellerProduct />
+          <CustomersForm />
+          <WaiterSells />
+          <ToastContainer />
+        </main>
+      </body>
     </>
   );
 }
