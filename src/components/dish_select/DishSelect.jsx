@@ -11,7 +11,6 @@ import ListItemText from '@mui/material/ListItemText';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import { CreateFormContext } from '../create_bill/Context';
 
 const DishSelect = () => {
@@ -91,7 +90,7 @@ const DishSelect = () => {
         }}
         subheader={<li />}
       >
-        {dishes.length == 0 ? (
+        {dishes.length === 0 ? (
           <></>
         ) : (
           dishes.map((dish) => {
