@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# Getting Started with  CTDS_WEBAPP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend Project works alongside with a backend api hosted at
+### https://github.com/spalduing/ctds_webapi
+To Successfully run this project you have to create a local .env environment variable named as
+## "REACT_APP_DEV_CTDS_WEBBAPI_URL"
+then set its value to
+### http://localhost:5001/
 
-## Available Scripts
+## you also take in count that both project use yarn for the dependencies management
 
 In the project directory, you can run:
 
