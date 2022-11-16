@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import useFetchCustomers from './hooks/useFetchCustomers';
 import useFetchWaiters from './hooks/useFetchWaiters';
 import useFetchTables from './hooks/useFetchTables';

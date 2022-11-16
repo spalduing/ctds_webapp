@@ -11,7 +11,6 @@ const registerBill = (payload) => {
     .post(`/bills/registerBill`, payload)
     .then((response) => {
       successToast(`${POST_SUCCESS} ${response.data.createdAt}`);
-      // console.log(response.data);
     })
     .catch((error) => {
       errorToast(`${POST_FAILED} : \n ${error}`);
