@@ -28,9 +28,6 @@ const CreateBill = () => {
         <p>
           Form to register a bill.
         </p>
-        <br />
-        <br />
-        <br />
         <CreateBillForm
           customers={customers}
           waiters={waiters}

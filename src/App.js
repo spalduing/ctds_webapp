@@ -1,10 +1,9 @@
 import './App.css';
 import { ToastContainer } from 'react-toastify';
-import BestSellerProduct from './components/bestseller_product/BestSellerProduct';
 import Bills from './components/bills/Bills';
 import CreateBill from './components/create_bill/CreateBill';
-import CustomersForm from './components/customers_consumptions/CustomersForm';
-import WaiterSells from './components/waiters_sells/WaiterSells';
+import RestaurantInfo from './components/restaurant_info/RestaurantInfo';
+import QueriesContext from './components/queries_context/QueriesContext';
 function App() {
   return (
     <>
@@ -15,9 +14,9 @@ function App() {
         <main>
           <CreateBill />
           <Bills />
-          <BestSellerProduct />
-          <CustomersForm />
-          <WaiterSells />
+          <QueriesContext>
+            <RestaurantInfo />
+          </QueriesContext>
           <ToastContainer />
         </main>
       </body>

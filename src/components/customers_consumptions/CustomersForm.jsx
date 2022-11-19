@@ -8,7 +8,7 @@ const CustomersForm = () => {
     <section>
       <h2>Customers consumptions</h2>
       <p>
-        Provide a value to deploy a list of custumers with consumtions greater
+        Provide a value to deploy a list of customers with consumptions greater
         or equal than a given value
       </p>
       <TextField

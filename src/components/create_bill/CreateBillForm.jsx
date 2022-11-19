@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
@@ -6,7 +7,7 @@ import PersonSelect from '../person_select/PersonSelect';
 import TableSelect from '../table_select/TableSelect';
 
 import DishSelect from '../dish_select/DishSelect';
-import registerBill from './hooks/registerBill';
+import registerBill from './utils/registerBill';
 
 import { CreateFormContext } from './Context';
 
@@ -26,37 +27,25 @@ const CreateBillForm = ({ customers, waiters, tables, managers }) => {
     detail_Bills,
   };
 
-  console.log('customerId: ', customerId);
-  console.log('waiterId: ', waiterId);
-  console.log('managerId: ', managerId);
-  console.log('tableId: ', tableId);
-  console.log('detailBills: ', detail_Bills);
-
   return (
     <Box sx={{ minWidth: 120, width: 450 }}>
-      <PersonSelect options={managers} label={'manager'} />
-      <br />
-      <br />
-      <PersonSelect options={customers} label={'customer'} />
-      <br />
-      <br />
-      <PersonSelect options={waiters} label={'waiter'} />
-      <br />
-      <br />
-      <TableSelect options={tables} label={'table'} />
-      <br />
-      <br />
-      <DishSelect />
-      <Box sx={{ width: 128, height: 56 }}>
-        <Button
-          variant="contained"
-          onClick={() => {
-            registerBill(payload);
-          }}
-        >
-          Register Bill
-        </Button>
-      </Box>
+      <Stack spacing={2}>
+        <PersonSelect options={managers} label={'manager'} />
+        <PersonSelect options={customers} label={'customer'} />
+        <PersonSelect options={waiters} label={'waiter'} />
+        <TableSelect options={tables} label={'table'} />
+        <DishSelect />
+        <Box sx={{ width: 128, height: 56 }}>
+          <Button
+            variant="contained"
+            onClick={() => {
+              registerBill(payload);
+            }}
+          >
+            Register Bill
+          </Button>
+        </Box>
+      </Stack>
     </Box>
   );
 };

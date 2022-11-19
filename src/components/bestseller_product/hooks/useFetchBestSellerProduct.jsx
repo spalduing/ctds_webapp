@@ -1,25 +1,24 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useContext } from 'react';
+
+import { CreateQueriesContext } from '../../queries_context/QueriesContext';
+import fetchBestSellerProduct from '../utils/fetchBestSellerProduct';
 
 const useFetchBestSellerProduct = () => {
-    const [product, setProduct] = useState({});
-    const [isFetching, setIsFetching] = useState(true);
+  const { isButtonSearchClicked, startDate, endDate } =
+    useContext(CreateQueriesContext);
 
-    useEffect(() => {
-      axios
-        .get('/detail_bills/bestseller')
-        .then((response) => {
-          setProduct(response.data);
-        })
-        .catch((e) => {
-          console.error(e);
-        })
-        .finally(() => {
-          setIsFetching(false);
-        });
-    }, []);
+  const searchButtonIsClicked = isButtonSearchClicked[0];
+  const rStartDate = startDate[0];
+  const rEndDate = endDate[0];
 
-    return { product, isFetching };
-  };
+  const [product, setProduct] = useState({});
+  const [isFetching, setIsFetching] = useState(true);
 
-  export default useFetchBestSellerProduct;
+  useEffect(() => {
+    fetchBestSellerProduct(setProduct, setIsFetching, rStartDate, rEndDate);
+  }, [searchButtonIsClicked]);
+
+  return { product, isFetching };
+};
+
+export default useFetchBestSellerProduct;
