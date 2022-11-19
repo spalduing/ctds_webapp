@@ -15,6 +15,7 @@ const useFetchWaiterSells = () => {
 
   useEffect(() => {
     fetchWaiterSells(rStartDate,rEndDate,setWaiters,setIsFetching)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchButtonIsClicked]);
 
   return { waiters, isFetching };

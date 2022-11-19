@@ -23,6 +23,7 @@ const useFetchCustomersConsumptions = (givenValue = 0.0) => {
 
   useEffect(() => {
     fetchCustomersConsumptions(fetchParameters);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [givenValue, searchButtonIsClicked]);
 
   return { customers, isFetching };

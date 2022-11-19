@@ -16,6 +16,7 @@ const useFetchBestSellerProduct = () => {
 
   useEffect(() => {
     fetchBestSellerProduct(setProduct, setIsFetching, rStartDate, rEndDate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchButtonIsClicked]);
 
   return { product, isFetching };
