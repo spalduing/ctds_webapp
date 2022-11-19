@@ -1,7 +1,7 @@
 # Getting Started with  CTDS_WEBAPP
 
 This frontend Project works alongside with a backend api hosted at
-### https://github.com/spalduing/ctds_webapi
+### https://github.com/spalduing/ctds_webapi_mysql
 To Successfully run this project you have to create a local .env environment variable named as
 ## "REACT_APP_DEV_CTDS_WEBBAPI_URL"
 then set its value to
